@@ -1,0 +1,1821 @@
+{
+  "model_version": "0.1",
+  "title": "Ordinary weekday in a fictional mixed household",
+  "mandate": "Sustain and develop members while preserving a viable, meaningful collective across time.",
+  "rights_floor": [
+    {
+      "id": "safety",
+      "definition": "Avoid preventable physical, emotional, and material harm."
+    },
+    {
+      "id": "dignity",
+      "definition": "Do not reduce a person to a resource, problem, or optimization target."
+    },
+    {
+      "id": "privacy",
+      "definition": "Collect, infer, retain, and disclose information only within legitimate boundaries."
+    },
+    {
+      "id": "basic_autonomy",
+      "definition": "Preserve meaningful choice, consent, refusal, and exit appropriate to capacity."
+    }
+  ],
+  "components": [
+    "participants",
+    "relationships",
+    "habitat_commons",
+    "coordination",
+    "continuity",
+    "boundary_interfaces"
+  ],
+  "functions": [
+    {
+      "id": "sustain",
+      "definition": "Provide food, shelter, health support, and safety."
+    },
+    {
+      "id": "care_develop",
+      "definition": "Enable nurture, learning, recovery, and growth."
+    },
+    {
+      "id": "belong",
+      "definition": "Support attachment, recognition, intimacy, and identity."
+    },
+    {
+      "id": "coordinate",
+      "definition": "Organize work, resources, decisions, and conflict."
+    },
+    {
+      "id": "continue",
+      "definition": "Carry memory, values, commitments, and succession through time."
+    },
+    {
+      "id": "connect",
+      "definition": "Relate members to community, institutions, the economy, and other agents."
+    }
+  ],
+  "household": {
+    "id": "river_household",
+    "name": "The River household",
+    "description": "A fictional household used to exercise different schedules, dependent care, an extended-family connection, and nonhuman care without claiming that this is a universal family form.",
+    "participants": [
+      {
+        "id": "maya",
+        "name": "Maya",
+        "kind": "human",
+        "member_layers": [
+          "core_household"
+        ],
+        "roles": [
+          "adult member",
+          "hospital worker",
+          "caregiver for Leila",
+          "support person for Miriam"
+        ],
+        "needs": [
+          "reliable early departure",
+          "rest",
+          "shared responsibility",
+          "private personal context"
+        ],
+        "rights": [
+          "safety",
+          "dignity",
+          "privacy",
+          "basic_autonomy"
+        ]
+      },
+      {
+        "id": "jonah",
+        "name": "Jonah",
+        "kind": "human",
+        "member_layers": [
+          "core_household"
+        ],
+        "roles": [
+          "adult member",
+          "remote worker",
+          "caregiver for Leila",
+          "primary weekday pet carer"
+        ],
+        "needs": [
+          "quiet focus periods",
+          "predictable internet access",
+          "shared responsibility",
+          "private personal context"
+        ],
+        "rights": [
+          "safety",
+          "dignity",
+          "privacy",
+          "basic_autonomy"
+        ]
+      },
+      {
+        "id": "leila",
+        "name": "Leila",
+        "kind": "human",
+        "member_layers": [
+          "dependent"
+        ],
+        "roles": [
+          "school-age member",
+          "learner",
+          "contributor to age-appropriate chores"
+        ],
+        "needs": [
+          "care and safety",
+          "learning support",
+          "play and rest",
+          "age-appropriate voice and privacy"
+        ],
+        "rights": [
+          "safety",
+          "dignity",
+          "privacy",
+          "basic_autonomy"
+        ]
+      },
+      {
+        "id": "miriam",
+        "name": "Miriam",
+        "kind": "human",
+        "member_layers": [
+          "extended_family"
+        ],
+        "roles": [
+          "nearby elder",
+          "family knowledge-holder",
+          "recipient of limited transport support"
+        ],
+        "needs": [
+          "reliable appointment support",
+          "control over health information",
+          "continued independence",
+          "reciprocal family connection"
+        ],
+        "rights": [
+          "safety",
+          "dignity",
+          "privacy",
+          "basic_autonomy"
+        ]
+      },
+      {
+        "id": "pico",
+        "name": "Pico",
+        "kind": "nonhuman_dependent",
+        "member_layers": [
+          "dependent"
+        ],
+        "roles": [
+          "companion animal",
+          "dependent care recipient"
+        ],
+        "needs": [
+          "food and water",
+          "movement",
+          "safe shelter",
+          "care and attention"
+        ],
+        "rights": [
+          "safety",
+          "welfare",
+          "behavioral agency"
+        ]
+      },
+      {
+        "id": "homie",
+        "name": "Homie",
+        "kind": "delegated_agent",
+        "member_layers": [
+          "authorized_participant"
+        ],
+        "roles": [
+          "delegated home steward",
+          "shared-state coordinator",
+          "bounded external interface"
+        ],
+        "needs": [
+          "clear delegations",
+          "reliable scoped inputs",
+          "auditable action channels"
+        ],
+        "rights": [
+          "no member rights",
+          "authority only through revocable delegation"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "id": "maya_jonah_partnership",
+        "kind": "partner",
+        "from": "maya",
+        "to": "jonah",
+        "features": [
+          "care",
+          "shared household responsibility",
+          "reciprocal voice",
+          "potential schedule conflict"
+        ]
+      },
+      {
+        "id": "maya_leila_care",
+        "kind": "caregiver_dependent",
+        "from": "maya",
+        "to": "leila",
+        "features": [
+          "care duty",
+          "protective authority",
+          "developmental support",
+          "age-adjusted autonomy"
+        ]
+      },
+      {
+        "id": "jonah_leila_care",
+        "kind": "caregiver_dependent",
+        "from": "jonah",
+        "to": "leila",
+        "features": [
+          "care duty",
+          "protective authority",
+          "learning support",
+          "age-adjusted autonomy"
+        ]
+      },
+      {
+        "id": "maya_miriam_family",
+        "kind": "extended_family",
+        "from": "maya",
+        "to": "miriam",
+        "features": [
+          "affection",
+          "reciprocal support",
+          "limited care commitment",
+          "Miriam retains decision authority"
+        ]
+      },
+      {
+        "id": "jonah_pico_care",
+        "kind": "companion_care",
+        "from": "jonah",
+        "to": "pico",
+        "features": [
+          "weekday feeding duty",
+          "exercise duty",
+          "companionship"
+        ]
+      },
+      {
+        "id": "maya_homie_delegation",
+        "kind": "delegation",
+        "from": "maya",
+        "to": "homie",
+        "features": [
+          "revocable authority",
+          "purpose limitation",
+          "shared-state access only"
+        ]
+      },
+      {
+        "id": "jonah_homie_delegation",
+        "kind": "delegation",
+        "from": "jonah",
+        "to": "homie",
+        "features": [
+          "revocable authority",
+          "purpose limitation",
+          "shared-state access only"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "home_space",
+        "name": "Home space",
+        "kind": "space",
+        "shared_by": [
+          "maya",
+          "jonah",
+          "leila",
+          "pico"
+        ],
+        "governance_rule": "Shared access is shaped by safety, privacy, quiet hours, and temporary personal use."
+      },
+      {
+        "id": "bathroom_time",
+        "name": "Bathroom time",
+        "kind": "time",
+        "shared_by": [
+          "maya",
+          "jonah",
+          "leila"
+        ],
+        "governance_rule": "Urgency and fixed departure times receive priority, with a fair rotation for flexible use."
+      },
+      {
+        "id": "kitchen_pantry",
+        "name": "Kitchen and pantry",
+        "kind": "physical",
+        "shared_by": [
+          "maya",
+          "jonah",
+          "leila"
+        ],
+        "governance_rule": "Staples may be replenished within the agreed list and spending threshold."
+      },
+      {
+        "id": "household_budget",
+        "name": "Household budget",
+        "kind": "financial",
+        "shared_by": [
+          "maya",
+          "jonah"
+        ],
+        "governance_rule": "Routine spending is delegated below a threshold; exceptions require an adult member's confirmation."
+      },
+      {
+        "id": "household_calendar",
+        "name": "Shared household calendar",
+        "kind": "information",
+        "shared_by": [
+          "maya",
+          "jonah",
+          "leila",
+          "homie"
+        ],
+        "governance_rule": "Only intentionally shared availability and commitments are visible to the steward."
+      },
+      {
+        "id": "internet_connection",
+        "name": "Home internet connection",
+        "kind": "utility",
+        "shared_by": [
+          "maya",
+          "jonah",
+          "leila"
+        ],
+        "governance_rule": "Safety and time-critical work or learning take priority; content remains private."
+      },
+      {
+        "id": "school_transport_access",
+        "name": "School transport access",
+        "kind": "external_access",
+        "shared_by": [
+          "maya",
+          "jonah",
+          "leila"
+        ],
+        "governance_rule": "A caregiver authorizes alternate transport and the minimum necessary data disclosure."
+      },
+      {
+        "id": "elder_support_window",
+        "name": "Elder support time",
+        "kind": "time",
+        "shared_by": [
+          "maya",
+          "miriam"
+        ],
+        "governance_rule": "Miriam controls her care decisions; Maya controls which support she can personally commit."
+      },
+      {
+        "id": "pet_care_supplies",
+        "name": "Pet care supplies",
+        "kind": "physical",
+        "shared_by": [
+          "jonah",
+          "pico"
+        ],
+        "governance_rule": "Minimum food, water, exercise, and safety needs cannot be displaced by convenience."
+      },
+      {
+        "id": "shared_attention",
+        "name": "Shared household attention",
+        "kind": "attention",
+        "shared_by": [
+          "maya",
+          "jonah",
+          "leila",
+          "miriam",
+          "pico"
+        ],
+        "governance_rule": "Urgent care can interrupt routines; non-urgent claims are negotiated rather than silently assigned."
+      }
+    ],
+    "governance": {
+      "decision_principles": [
+        "The rights floor constrains every decision.",
+        "Affected people receive voice appropriate to their capacity and stake.",
+        "Authority follows legitimate role, ownership, consent, and dependency duties rather than technical access.",
+        "Agent autonomy decreases as consequence, irreversibility, uncertainty, sensitivity, or disagreement rises.",
+        "Delegations are purpose-limited, visible, auditable, and revocable."
+      ],
+      "delegations": [
+        {
+          "id": "routine_home_coordination",
+          "delegate": "homie",
+          "purpose": "Coordinate agreed low-risk household routines.",
+          "scope": [
+            "shared calendar reminders",
+            "agreed appliance settings",
+            "staple stock monitoring",
+            "low-value purchases from an approved list"
+          ],
+          "limits": [
+            "no access to private messages or health details",
+            "no new recurring financial commitment",
+            "no unilateral change to family rules or relationships"
+          ],
+          "revocable_by": [
+            "maya",
+            "jonah"
+          ]
+        },
+        {
+          "id": "miriam_appointment_liaison",
+          "delegate": "homie",
+          "purpose": "Relay appointment logistics chosen by Miriam.",
+          "scope": [
+            "appointment time",
+            "transport need",
+            "chosen family contact"
+          ],
+          "limits": [
+            "no diagnosis access",
+            "no treatment decision",
+            "no disclosure beyond the named appointment purpose"
+          ],
+          "revocable_by": [
+            "miriam"
+          ]
+        },
+        {
+          "id": "leila_arrival_safeguard",
+          "delegate": "homie",
+          "purpose": "Support safe arrival from school without continuous surveillance.",
+          "scope": [
+            "expected arrival window",
+            "entry sensor state",
+            "caregiver notification"
+          ],
+          "limits": [
+            "no private-message access",
+            "no continuous location history",
+            "no disclosure outside caregivers without an emergency basis"
+          ],
+          "revocable_by": [
+            "maya",
+            "jonah"
+          ]
+        }
+      ]
+    }
+  },
+  "episodes": [
+    {
+      "id": "early_shift_handoff",
+      "time": "05:45",
+      "title": "Early shift and quiet handoff",
+      "trigger": "Maya must leave early while the rest of the household is sleeping.",
+      "components": [
+        "participants",
+        "relationships",
+        "habitat_commons",
+        "coordination",
+        "continuity"
+      ],
+      "dynamics": [
+        "routine_cooperation",
+        "dependency"
+      ],
+      "affected": [
+        {
+          "participant": "maya",
+          "needs": [
+            "reliable departure",
+            "breakfast"
+          ],
+          "rights": [
+            "basic_autonomy",
+            "privacy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "rest",
+            "clear morning care handoff"
+          ],
+          "rights": [
+            "dignity",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "leila",
+          "needs": [
+            "continued caregiver coverage",
+            "sleep"
+          ],
+          "rights": [
+            "safety"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "shared",
+          "subject": "Maya's departure time and Jonah's morning caregiver role",
+          "purpose": "Coordinate the morning handoff.",
+          "recipients": [
+            "maya",
+            "jonah",
+            "homie"
+          ]
+        },
+        {
+          "class": "private",
+          "subject": "Maya's personal sleep and readiness data",
+          "purpose": "Remain available only to Maya unless she explicitly shares a conclusion.",
+          "recipients": [
+            "maya"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "maya",
+          "jonah"
+        ],
+        "basis": "Each adult controls personal routines; the caregiver handoff is a shared commitment.",
+        "rights_floor_check": "Quiet automation preserves rest and does not expose private readiness data."
+      },
+      "steward": {
+        "mode": "automatic",
+        "may_do": [
+          "Use Maya's private alarm channel without broadcasting it.",
+          "Apply the pre-agreed low-light kitchen scene.",
+          "Show the shared handoff reminder to Maya and Jonah."
+        ],
+        "must_not_do": [
+          "Infer or announce why Maya slept poorly.",
+          "Reassign Leila's care without confirmation."
+        ],
+        "human_input": "No new input is required while the standing routine remains unchanged.",
+        "escalation": "Wake Jonah only if Maya reports that the handoff cannot occur safely."
+      },
+      "actions": [
+        {
+          "actor": "homie",
+          "action": "Applies the quiet morning routine and displays the existing handoff.",
+          "authorization": "routine_home_coordination"
+        },
+        {
+          "actor": "maya",
+          "action": "Acknowledges departure and caregiver handoff.",
+          "authorization": "personal and shared caregiver authority"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "The care handoff is completed without silently transferring responsibility."
+        ],
+        "resource_changes": [
+          "Kitchen and lighting are used in quiet mode."
+        ],
+        "shared_memory_updates": [
+          "Record that the scheduled handoff occurred, not Maya's private condition."
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "id": "bathroom_breakfast_conflict",
+      "time": "06:35",
+      "title": "Bathroom and breakfast contention",
+      "trigger": "Leila needs the bathroom before school just as Jonah begins a flexible exercise routine, and breakfast still needs preparation.",
+      "components": [
+        "participants",
+        "relationships",
+        "habitat_commons",
+        "coordination"
+      ],
+      "dynamics": [
+        "competing_interests",
+        "dependency"
+      ],
+      "affected": [
+        {
+          "participant": "leila",
+          "needs": [
+            "timely school preparation",
+            "breakfast"
+          ],
+          "rights": [
+            "dignity",
+            "privacy",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "exercise",
+            "manageable caregiver workload"
+          ],
+          "rights": [
+            "basic_autonomy",
+            "dignity"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "shared",
+          "subject": "Fixed departure deadline and temporary bathroom request",
+          "purpose": "Coordinate access without exposing personal bathroom details.",
+          "recipients": [
+            "leila",
+            "jonah",
+            "homie"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "leila",
+          "jonah"
+        ],
+        "basis": "Leila has voice over her immediate need; Jonah holds caregiver responsibility and control over his flexible routine.",
+        "rights_floor_check": "The system communicates only availability and urgency, preserving bodily privacy and avoiding shame."
+      },
+      "steward": {
+        "mode": "negotiate",
+        "may_do": [
+          "Surface the fixed school deadline and flexible exercise window.",
+          "Offer a sequence in which Leila uses the bathroom first and prepares a simple breakfast with Jonah."
+        ],
+        "must_not_do": [
+          "Publish bathroom-use details.",
+          "Treat Jonah's time or Leila's needs as automatically expendable."
+        ],
+        "human_input": "Leila and Jonah choose the sequence; Jonah remains responsible for safe completion.",
+        "escalation": "Escalate only if delay threatens safe school transport or a health need is disclosed."
+      },
+      "actions": [
+        {
+          "actor": "homie",
+          "action": "Presents the deadline and two feasible sequences.",
+          "authorization": "routine_home_coordination"
+        },
+        {
+          "actor": "jonah",
+          "action": "Defers exercise and begins breakfast while Leila uses the bathroom.",
+          "authorization": "caregiver authority and personal choice"
+        },
+        {
+          "actor": "leila",
+          "action": "Chooses the quicker breakfast option and prepares for school.",
+          "authorization": "age-appropriate household voice"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "Leila participates in the solution rather than being treated as a schedule object.",
+          "Jonah accepts a small negotiated sacrifice."
+        ],
+        "resource_changes": [
+          "Bathroom time is reordered.",
+          "Breakfast uses a quicker pantry option."
+        ],
+        "shared_memory_updates": [
+          "Flexible exercise can move behind a fixed school deadline when both needs cannot fit."
+        ],
+        "unresolved": [
+          "Repeated morning contention may indicate that the routine needs redesign rather than daily negotiation."
+        ]
+      }
+    },
+    {
+      "id": "school_transport_disruption",
+      "time": "07:20",
+      "title": "School transport disruption",
+      "trigger": "The usual school vehicle reports a breakdown ten minutes before pickup.",
+      "components": [
+        "participants",
+        "relationships",
+        "habitat_commons",
+        "coordination",
+        "boundary_interfaces"
+      ],
+      "dynamics": [
+        "dependency",
+        "unexpected_change",
+        "competing_interests"
+      ],
+      "affected": [
+        {
+          "participant": "leila",
+          "needs": [
+            "safe transport",
+            "timely school arrival"
+          ],
+          "rights": [
+            "safety",
+            "privacy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "make a morning work meeting",
+            "fulfil caregiver duty"
+          ],
+          "rights": [
+            "basic_autonomy"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "external_approved",
+          "subject": "Leila's pickup point, destination, and caregiver contact",
+          "purpose": "Request one safe replacement trip.",
+          "recipients": [
+            "approved_transport_provider"
+          ]
+        },
+        {
+          "class": "purpose_delegated",
+          "subject": "Jonah's meeting deadline and maximum approved fare",
+          "purpose": "Compare feasible transport options.",
+          "recipients": [
+            "homie"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "jonah"
+        ],
+        "basis": "A caregiver must authorize alternate transport, disclosure, and spending.",
+        "rights_floor_check": "Only vetted transport options and minimum necessary child data may be used."
+      },
+      "steward": {
+        "mode": "confirm",
+        "may_do": [
+          "Compare approved transport options against time, safety, and the spending threshold.",
+          "Prepare a minimum-data booking for Jonah's confirmation.",
+          "Notify the school of a possible delay after caregiver approval."
+        ],
+        "must_not_do": [
+          "Select an unvetted driver because it is faster.",
+          "Transmit Leila's ongoing location history.",
+          "Book above the spending threshold without confirmation."
+        ],
+        "human_input": "Jonah confirms the provider, disclosure, and fare.",
+        "escalation": "If no safe option exists, route the decision to Jonah and Maya rather than optimizing for punctuality."
+      },
+      "actions": [
+        {
+          "actor": "homie",
+          "action": "Produces two vetted options and a stay-home fallback.",
+          "authorization": "routine_home_coordination"
+        },
+        {
+          "actor": "jonah",
+          "action": "Approves the safest feasible replacement trip.",
+          "authorization": "caregiver and budget authority"
+        },
+        {
+          "actor": "approved_transport_provider",
+          "action": "Accepts the single-trip request with limited trip data.",
+          "authorization": "external_approved disclosure"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "Jonah remains visibly accountable for a high-stakes dependent-care decision."
+        ],
+        "resource_changes": [
+          "Transport budget decreases by the approved fare.",
+          "Jonah's focus block begins later."
+        ],
+        "shared_memory_updates": [
+          "Record provider reliability, cost, and outcome without retaining Leila's route history."
+        ],
+        "unresolved": [
+          "The household lacks a pre-approved backup transport plan."
+        ]
+      }
+    },
+    {
+      "id": "staple_replenishment",
+      "time": "09:30",
+      "title": "Staple and pet-supply replenishment",
+      "trigger": "Pantry and pet-supply sensors report that approved staples will run out before the next planned shop.",
+      "components": [
+        "participants",
+        "habitat_commons",
+        "coordination",
+        "boundary_interfaces"
+      ],
+      "dynamics": [
+        "routine_cooperation",
+        "dependency"
+      ],
+      "affected": [
+        {
+          "participant": "maya",
+          "needs": [
+            "budget predictability"
+          ],
+          "rights": [
+            "basic_autonomy",
+            "privacy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "budget predictability"
+          ],
+          "rights": [
+            "basic_autonomy",
+            "privacy"
+          ]
+        },
+        {
+          "participant": "pico",
+          "needs": [
+            "continuous food supply"
+          ],
+          "rights": [
+            "safety",
+            "welfare"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "shared",
+          "subject": "Approved staple inventory and household reorder thresholds",
+          "purpose": "Maintain the household commons.",
+          "recipients": [
+            "maya",
+            "jonah",
+            "homie"
+          ]
+        },
+        {
+          "class": "external_approved",
+          "subject": "Selected items, delivery address, and payment token",
+          "purpose": "Place this approved household order.",
+          "recipients": [
+            "approved_grocery_provider"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "maya",
+          "jonah"
+        ],
+        "basis": "The adults jointly defined an approved list, maximum total, and revocable payment delegation.",
+        "rights_floor_check": "The order reveals no inferred health condition or private consumption profile."
+      },
+      "steward": {
+        "mode": "automatic",
+        "may_do": [
+          "Order exact approved staples below the spending threshold.",
+          "Select the agreed pet food without substitution.",
+          "Record cost and expected delivery window."
+        ],
+        "must_not_do": [
+          "Infer medical or religious meaning from food choices.",
+          "Accept a pet-food substitution without confirmation.",
+          "Create a recurring subscription."
+        ],
+        "human_input": "No input is required unless stock, price, or substitution leaves the delegated envelope.",
+        "escalation": "Ask an adult member to confirm any substitution, threshold overrun, or new recurring commitment."
+      },
+      "actions": [
+        {
+          "actor": "homie",
+          "action": "Places the approved low-value order and records its delivery window.",
+          "authorization": "routine_home_coordination"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "Routine provisioning work remains shared and visible rather than becoming invisible labor."
+        ],
+        "resource_changes": [
+          "Household budget decreases within the delegated threshold.",
+          "Expected pantry and pet-food stock increases."
+        ],
+        "shared_memory_updates": [
+          "Record price and provider fulfilment for the approved items."
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "id": "elder_appointment_change",
+      "time": "11:40",
+      "title": "Miriam's appointment moves",
+      "trigger": "A clinic offers Miriam an earlier appointment that overlaps Maya's shift and Jonah's work commitment.",
+      "components": [
+        "participants",
+        "relationships",
+        "habitat_commons",
+        "coordination",
+        "continuity",
+        "boundary_interfaces"
+      ],
+      "dynamics": [
+        "competing_interests",
+        "dependency",
+        "unexpected_change"
+      ],
+      "affected": [
+        {
+          "participant": "miriam",
+          "needs": [
+            "timely appointment",
+            "transport support",
+            "independence"
+          ],
+          "rights": [
+            "safety",
+            "dignity",
+            "privacy",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "maya",
+          "needs": [
+            "honor work responsibility",
+            "support Miriam without silent overcommitment"
+          ],
+          "rights": [
+            "dignity",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "protect a committed work call",
+            "fair allocation of family support"
+          ],
+          "rights": [
+            "dignity",
+            "basic_autonomy"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "purpose_delegated",
+          "subject": "Miriam's appointment time, transport need, and preferred contacts",
+          "purpose": "Coordinate this appointment only.",
+          "recipients": [
+            "homie"
+          ]
+        },
+        {
+          "class": "private",
+          "subject": "Miriam's diagnosis and clinical notes",
+          "purpose": "Remain between Miriam and her chosen health providers.",
+          "recipients": [
+            "miriam",
+            "clinic_agent"
+          ]
+        },
+        {
+          "class": "external_approved",
+          "subject": "Miriam's accepted appointment time and transport arrival window",
+          "purpose": "Confirm logistics with the clinic and approved transport provider.",
+          "recipients": [
+            "clinic_agent",
+            "approved_transport_provider"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "miriam",
+          "maya",
+          "jonah"
+        ],
+        "basis": "Miriam decides whether to accept care; each adult decides what support they can personally provide.",
+        "rights_floor_check": "The agent preserves Miriam's health privacy and autonomy while refusing to silently conscript family labor."
+      },
+      "steward": {
+        "mode": "escalate",
+        "may_do": [
+          "Ask Miriam whether she wants the earlier slot.",
+          "Show Maya and Jonah only the logistical request Miriam authorized.",
+          "Compare approved transport or community-support alternatives."
+        ],
+        "must_not_do": [
+          "Accept or reject the appointment for Miriam.",
+          "Reveal diagnosis or infer urgency from hidden clinical data.",
+          "Assign Maya or Jonah to provide transport."
+        ],
+        "human_input": "Miriam chooses the appointment; Maya and Jonah separately state their available support.",
+        "escalation": "If safe transport cannot be arranged, return the constraint to Miriam and the clinic rather than coercing a family member."
+      },
+      "actions": [
+        {
+          "actor": "miriam",
+          "action": "Accepts the earlier appointment and authorizes minimum logistical disclosure.",
+          "authorization": "personal health and schedule authority"
+        },
+        {
+          "actor": "maya",
+          "action": "Declines transport during her shift but offers an evening check-in.",
+          "authorization": "personal authority over her time"
+        },
+        {
+          "actor": "jonah",
+          "action": "Approves use of the family transport-support budget but keeps his work commitment.",
+          "authorization": "shared budget authority"
+        },
+        {
+          "actor": "homie",
+          "action": "Books approved transport and confirms only the appointment logistics.",
+          "authorization": "miriam_appointment_liaison and adult budget approval"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "Miriam receives support without losing decision authority.",
+          "Maya's and Jonah's boundaries remain visible rather than becoming evidence of insufficient care."
+        ],
+        "resource_changes": [
+          "Transport-support budget decreases.",
+          "Maya reserves an evening attention window."
+        ],
+        "shared_memory_updates": [
+          "Record that an approved ride was reliable and that evening check-in was offered.",
+          "Do not record diagnosis or treatment details in household memory."
+        ],
+        "unresolved": [
+          "The household needs a broader elder-support network for future daytime changes."
+        ]
+      }
+    },
+    {
+      "id": "school_return",
+      "time": "15:30",
+      "title": "Safe return with bounded privacy",
+      "trigger": "Leila arrives home during Jonah's work call and wants decompression time before homework.",
+      "components": [
+        "participants",
+        "relationships",
+        "habitat_commons",
+        "coordination",
+        "boundary_interfaces"
+      ],
+      "dynamics": [
+        "routine_cooperation",
+        "dependency",
+        "competing_interests"
+      ],
+      "affected": [
+        {
+          "participant": "leila",
+          "needs": [
+            "safe entry",
+            "food",
+            "decompression",
+            "age-appropriate privacy"
+          ],
+          "rights": [
+            "safety",
+            "privacy",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "uninterrupted work call",
+            "confidence in safe arrival"
+          ],
+          "rights": [
+            "privacy",
+            "basic_autonomy"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "purpose_delegated",
+          "subject": "Expected arrival window and entry sensor state",
+          "purpose": "Verify safe arrival and notify caregivers.",
+          "recipients": [
+            "homie"
+          ]
+        },
+        {
+          "class": "private",
+          "subject": "Leila's conversations, messages, and activities after entry",
+          "purpose": "Remain private unless Leila requests help or a concrete safety trigger occurs.",
+          "recipients": [
+            "leila"
+          ]
+        },
+        {
+          "class": "shared",
+          "subject": "Arrival confirmed and homework start window",
+          "purpose": "Coordinate caregiver availability and the evening routine.",
+          "recipients": [
+            "leila",
+            "jonah",
+            "maya",
+            "homie"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "leila",
+          "jonah",
+          "maya"
+        ],
+        "basis": "Caregivers define safety checks; Leila retains age-appropriate control over her private activity and decompression choice.",
+        "rights_floor_check": "Arrival safety is verified without continuous surveillance or content inspection."
+      },
+      "steward": {
+        "mode": "automatic",
+        "may_do": [
+          "Unlock using Leila's authorized credential during the arrival window.",
+          "Send a simple arrival confirmation to caregivers.",
+          "Offer the agreed snack and homework-start options."
+        ],
+        "must_not_do": [
+          "Monitor private messages or room activity.",
+          "Interpret a request for quiet as emotional pathology.",
+          "Interrupt Jonah's call after safe arrival is confirmed."
+        ],
+        "human_input": "Leila chooses her decompression and homework start within the agreed range.",
+        "escalation": "Alert a caregiver if arrival does not occur within the safety window or an explicit help request is made."
+      },
+      "actions": [
+        {
+          "actor": "homie",
+          "action": "Confirms entry, sends the bounded caregiver notification, and offers routine options.",
+          "authorization": "leila_arrival_safeguard"
+        },
+        {
+          "actor": "leila",
+          "action": "Chooses a snack and thirty minutes of private decompression before homework.",
+          "authorization": "age-appropriate personal choice"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "Safety oversight and growing independence coexist without requiring continuous monitoring."
+        ],
+        "resource_changes": [
+          "A snack is consumed.",
+          "Quiet space is reserved until the homework window."
+        ],
+        "shared_memory_updates": [
+          "Record safe arrival and chosen homework start time only."
+        ],
+        "unresolved": [
+          "The model needs a clearer transition policy as Leila's capacity and independence grow."
+        ]
+      }
+    },
+    {
+      "id": "water_outage_alert",
+      "time": "17:10",
+      "title": "Utility interruption changes the evening",
+      "trigger": "The water provider announces a two-hour outage beginning at 18:00, overlapping dinner and evening routines.",
+      "components": [
+        "participants",
+        "habitat_commons",
+        "coordination",
+        "boundary_interfaces",
+        "continuity"
+      ],
+      "dynamics": [
+        "unexpected_change",
+        "competing_interests"
+      ],
+      "affected": [
+        {
+          "participant": "maya",
+          "needs": [
+            "rest after work",
+            "basic household readiness"
+          ],
+          "rights": [
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "finish work",
+            "share outage preparation"
+          ],
+          "rights": [
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "leila",
+          "needs": [
+            "complete homework",
+            "food and hygiene"
+          ],
+          "rights": [
+            "safety",
+            "dignity"
+          ]
+        },
+        {
+          "participant": "pico",
+          "needs": [
+            "water"
+          ],
+          "rights": [
+            "safety",
+            "welfare"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "external_approved",
+          "subject": "Household service address and outage subscription",
+          "purpose": "Receive utility interruption notices.",
+          "recipients": [
+            "water_provider_agent"
+          ]
+        },
+        {
+          "class": "shared",
+          "subject": "Outage window, current water reserve, and evening commitments",
+          "purpose": "Choose a proportionate household response.",
+          "recipients": [
+            "maya",
+            "jonah",
+            "leila",
+            "homie"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "maya",
+          "jonah",
+          "leila"
+        ],
+        "basis": "Adults govern shared resources; Leila has voice over changes to her evening responsibilities and comfort.",
+        "rights_floor_check": "The proposed response secures drinking and hygiene needs without panic buying or assigning all labor to one person."
+      },
+      "steward": {
+        "mode": "propose",
+        "may_do": [
+          "Verify the notice through the official provider channel.",
+          "Show the existing reserve and a minimal preparation checklist.",
+          "Offer meal and chore adjustments that reduce water use."
+        ],
+        "must_not_do": [
+          "Purchase excessive reserves without approval.",
+          "Cancel personal commitments unilaterally.",
+          "Treat an unverified message as authoritative."
+        ],
+        "human_input": "Household members choose the meal change and divide the short preparation tasks.",
+        "escalation": "Escalate if safe drinking water cannot be secured or the official notice indicates contamination."
+      },
+      "actions": [
+        {
+          "actor": "homie",
+          "action": "Verifies the outage and proposes a low-water dinner plus a short preparation sequence.",
+          "authorization": "routine_home_coordination"
+        },
+        {
+          "actor": "maya",
+          "action": "Fills drinking containers after a short rest.",
+          "authorization": "negotiated shared-resource role"
+        },
+        {
+          "actor": "jonah",
+          "action": "Handles pet water and the meal adjustment after his call.",
+          "authorization": "negotiated shared-resource role"
+        },
+        {
+          "actor": "leila",
+          "action": "Fills one hygiene container before returning to homework.",
+          "authorization": "age-appropriate negotiated chore"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "Disruption work is divided explicitly rather than defaulting to the first available caregiver."
+        ],
+        "resource_changes": [
+          "A safe short-term water reserve is prepared.",
+          "Dinner changes to a lower-water option."
+        ],
+        "shared_memory_updates": [
+          "Store the verified provider channel and the successful minimal checklist."
+        ],
+        "unresolved": [
+          "The household has not defined a response for a multi-day outage."
+        ]
+      }
+    },
+    {
+      "id": "dinner_and_chores",
+      "time": "18:30",
+      "title": "Dinner, chores, and connection",
+      "trigger": "Everyone is tired, the outage preparation has changed dinner, and routine chores remain unfinished.",
+      "components": [
+        "participants",
+        "relationships",
+        "habitat_commons",
+        "coordination",
+        "continuity"
+      ],
+      "dynamics": [
+        "routine_cooperation",
+        "competing_interests"
+      ],
+      "affected": [
+        {
+          "participant": "maya",
+          "needs": [
+            "food",
+            "rest",
+            "family connection"
+          ],
+          "rights": [
+            "dignity",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "food",
+            "completion of pet care",
+            "fair chore allocation"
+          ],
+          "rights": [
+            "dignity",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "leila",
+          "needs": [
+            "food",
+            "recognition",
+            "manageable chores"
+          ],
+          "rights": [
+            "dignity",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "pico",
+          "needs": [
+            "food",
+            "exercise",
+            "attention"
+          ],
+          "rights": [
+            "safety",
+            "welfare"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "shared",
+          "subject": "Outstanding chores, disclosed energy levels, and tonight's commitments",
+          "purpose": "Negotiate a fair evening plan.",
+          "recipients": [
+            "maya",
+            "jonah",
+            "leila",
+            "homie"
+          ]
+        },
+        {
+          "class": "private",
+          "subject": "Undisclosed reasons for fatigue or mood",
+          "purpose": "Remain private unless the person chooses to share them.",
+          "recipients": [
+            "maya",
+            "jonah",
+            "leila"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "maya",
+          "jonah",
+          "leila"
+        ],
+        "basis": "Adults retain dependent-care responsibility; each person has voice over optional tasks and disclosed capacity.",
+        "rights_floor_check": "No person's hidden emotional state is inferred, and fatigue is not framed as moral failure."
+      },
+      "steward": {
+        "mode": "negotiate",
+        "may_do": [
+          "Show only the chores, constraints, and capacity each person chose to share.",
+          "Offer a minimum viable evening plan and defer nonessential work.",
+          "Protect a short shared meal from avoidable notifications."
+        ],
+        "must_not_do": [
+          "Rank members by productivity or helpfulness.",
+          "Assign chores based on gender, income, or historical overfunctioning.",
+          "Diagnose fatigue from behavior."
+        ],
+        "human_input": "Members accept, reject, or revise the proposed distribution.",
+        "escalation": "If no plan meets dependent-care and safety needs, adults must resolve the remaining duties explicitly."
+      },
+      "actions": [
+        {
+          "actor": "homie",
+          "action": "Offers a minimum plan: simple dinner, Jonah walks Pico, Leila clears the table, and nonessential cleaning moves to tomorrow.",
+          "authorization": "routine_home_coordination"
+        },
+        {
+          "actor": "maya",
+          "action": "Accepts the deferred cleaning and joins dinner after resting.",
+          "authorization": "personal and shared household voice"
+        },
+        {
+          "actor": "jonah",
+          "action": "Prepares the simple meal and walks Pico.",
+          "authorization": "negotiated household role"
+        },
+        {
+          "actor": "leila",
+          "action": "Clears the table and shares one school highlight.",
+          "authorization": "age-appropriate negotiated role"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "The household preserves connection without demanding full routine performance after disruption.",
+          "Invisible labor becomes an explicit shared decision."
+        ],
+        "resource_changes": [
+          "Food and pet-care needs are met.",
+          "Nonessential cleaning is deferred."
+        ],
+        "shared_memory_updates": [
+          "A minimum viable evening is an accepted response to accumulated strain."
+        ],
+        "unresolved": [
+          "Deferred work still needs an owner and a realistic future slot."
+        ]
+      }
+    },
+    {
+      "id": "homework_internet_contention",
+      "time": "20:00",
+      "title": "Homework, bandwidth, and quiet",
+      "trigger": "Leila needs a video lesson while Jonah must upload a large work file and Maya is calling Miriam.",
+      "components": [
+        "participants",
+        "relationships",
+        "habitat_commons",
+        "coordination",
+        "boundary_interfaces"
+      ],
+      "dynamics": [
+        "competing_interests",
+        "dependency"
+      ],
+      "affected": [
+        {
+          "participant": "leila",
+          "needs": [
+            "complete learning task",
+            "quiet support"
+          ],
+          "rights": [
+            "dignity",
+            "privacy",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "complete a promised upload",
+            "protect work content"
+          ],
+          "rights": [
+            "privacy",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "maya",
+          "needs": [
+            "private family call",
+            "check on Miriam"
+          ],
+          "rights": [
+            "privacy",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "miriam",
+          "needs": [
+            "private conversation",
+            "family connection"
+          ],
+          "rights": [
+            "privacy",
+            "dignity"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "shared",
+          "subject": "Bandwidth demand, deadlines, and room availability",
+          "purpose": "Sequence shared utility and quiet-space use.",
+          "recipients": [
+            "maya",
+            "jonah",
+            "leila",
+            "homie"
+          ]
+        },
+        {
+          "class": "private",
+          "subject": "Work file, lesson content, and family-call content",
+          "purpose": "Remain invisible to the home steward while resource demand is coordinated.",
+          "recipients": [
+            "maya",
+            "jonah",
+            "leila",
+            "miriam"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "maya",
+          "jonah",
+          "leila"
+        ],
+        "basis": "Each controls private content; shared bandwidth and quiet space require household coordination.",
+        "rights_floor_check": "The agent coordinates resource demand without inspecting content or treating paid work as automatically superior to learning and care."
+      },
+      "steward": {
+        "mode": "negotiate",
+        "may_do": [
+          "Show estimated bandwidth duration and disclosed deadlines.",
+          "Offer sequencing and quality-of-service options.",
+          "Reserve a room for Maya's call without accessing its content."
+        ],
+        "must_not_do": [
+          "Inspect files, lesson content, or call content.",
+          "Prioritize solely by income or adult status.",
+          "Throttle a participant without an agreed rule."
+        ],
+        "human_input": "Members agree that Leila's live lesson runs first while Jonah queues the upload; Maya uses a private room.",
+        "escalation": "If the lesson and work deadline cannot both be met, the affected members choose which external party to contact."
+      },
+      "actions": [
+        {
+          "actor": "homie",
+          "action": "Displays resource demand and proposes a sequence without examining content.",
+          "authorization": "routine_home_coordination"
+        },
+        {
+          "actor": "leila",
+          "action": "Completes the live lesson in the first bandwidth window.",
+          "authorization": "learning need and negotiated household priority"
+        },
+        {
+          "actor": "jonah",
+          "action": "Queues the upload and confirms its later completion.",
+          "authorization": "personal work authority and negotiated household plan"
+        },
+        {
+          "actor": "maya",
+          "action": "Uses the private room for her call with Miriam.",
+          "authorization": "personal and relational privacy"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "Learning, paid work, and family care are treated as legitimate competing claims rather than a fixed status hierarchy."
+        ],
+        "resource_changes": [
+          "Bandwidth and quiet space are sequenced across three tasks."
+        ],
+        "shared_memory_updates": [
+          "Store the successful sequencing rule and durations, not content metadata."
+        ],
+        "unresolved": [
+          "The household may need a technical bandwidth upgrade if contention becomes frequent."
+        ]
+      }
+    },
+    {
+      "id": "next_day_review",
+      "time": "21:30",
+      "title": "Prepare tomorrow and choose what becomes memory",
+      "trigger": "The household reviews tomorrow's commitments and the day's unresolved issues before quiet hours.",
+      "components": [
+        "participants",
+        "relationships",
+        "coordination",
+        "continuity",
+        "boundary_interfaces"
+      ],
+      "dynamics": [
+        "routine_cooperation",
+        "competing_interests"
+      ],
+      "affected": [
+        {
+          "participant": "maya",
+          "needs": [
+            "clear next-day commitments",
+            "rest",
+            "control over personal memory"
+          ],
+          "rights": [
+            "privacy",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "jonah",
+          "needs": [
+            "clear next-day commitments",
+            "fair follow-through",
+            "control over personal memory"
+          ],
+          "rights": [
+            "privacy",
+            "basic_autonomy"
+          ]
+        },
+        {
+          "participant": "leila",
+          "needs": [
+            "predictable morning",
+            "voice over her commitments",
+            "rest"
+          ],
+          "rights": [
+            "dignity",
+            "privacy",
+            "basic_autonomy"
+          ]
+        }
+      ],
+      "information": [
+        {
+          "class": "shared",
+          "subject": "Confirmed commitments, deferred cleaning, backup transport gap, and household-level lessons",
+          "purpose": "Coordinate tomorrow and preserve only useful collective memory.",
+          "recipients": [
+            "maya",
+            "jonah",
+            "leila",
+            "homie"
+          ]
+        },
+        {
+          "class": "private",
+          "subject": "Personal reflections, fatigue reasons, and unshared emotional interpretations",
+          "purpose": "Remain with the participant or personal agent.",
+          "recipients": [
+            "maya",
+            "jonah",
+            "leila"
+          ]
+        },
+        {
+          "class": "purpose_delegated",
+          "subject": "Tomorrow's accepted reminders and task owners",
+          "purpose": "Issue reminders until each commitment is completed, changed, or revoked.",
+          "recipients": [
+            "homie"
+          ]
+        }
+      ],
+      "authority": {
+        "holders": [
+          "maya",
+          "jonah",
+          "leila"
+        ],
+        "basis": "People confirm their own commitments; shared-memory entries require relevance, minimality, and visibility to affected members.",
+        "rights_floor_check": "The summary records agreements and system lessons, not judgments about character, mood, or private motives."
+      },
+      "steward": {
+        "mode": "confirm",
+        "may_do": [
+          "Draft tomorrow's shared schedule from confirmed commitments.",
+          "Suggest system-level lessons and unresolved gaps for explicit acceptance.",
+          "Offer deletion or correction before saving."
+        ],
+        "must_not_do": [
+          "Turn one difficult day into a personality profile.",
+          "Save private reflections in household memory.",
+          "Carry an unconfirmed task assignment into tomorrow."
+        ],
+        "human_input": "Each person confirms their commitments; affected members approve or reject proposed shared-memory entries.",
+        "escalation": "Leave disputed interpretations unresolved and unsaved; record only that a decision remains open when necessary for coordination."
+      },
+      "actions": [
+        {
+          "actor": "homie",
+          "action": "Drafts a minimal schedule, named task owners, and four proposed system lessons.",
+          "authorization": "routine_home_coordination"
+        },
+        {
+          "actor": "maya",
+          "action": "Confirms the evening check-in outcome and tomorrow's work departure.",
+          "authorization": "personal authority"
+        },
+        {
+          "actor": "jonah",
+          "action": "Accepts the deferred cleaning slot and backup-transport planning task.",
+          "authorization": "personal authority"
+        },
+        {
+          "actor": "leila",
+          "action": "Confirms her morning deadline and rejects saving a judgment about her mood.",
+          "authorization": "age-appropriate personal and household voice"
+        }
+      ],
+      "outcome": {
+        "relationship_changes": [
+          "Follow-through becomes explicit while private interpretations remain with individuals.",
+          "Leila participates in governing what the household remembers about her."
+        ],
+        "resource_changes": [
+          "Tomorrow's calendar and task commitments are updated.",
+          "Quiet hours begin with no unresolved urgent care need."
+        ],
+        "shared_memory_updates": [
+          "Create a backup school-transport plan.",
+          "Define a broader daytime elder-support network.",
+          "Use the minimal outage checklist for short verified outages.",
+          "Treat repeated morning contention as a routine-design signal."
+        ],
+        "unresolved": [
+          "How long system lessons should persist and who may retire them remains undefined."
+        ]
+      }
+    }
+  ],
+  "coverage": {
+    "required_components": [
+      "participants",
+      "relationships",
+      "habitat_commons",
+      "coordination",
+      "continuity",
+      "boundary_interfaces"
+    ],
+    "required_information_classes": [
+      "private",
+      "shared",
+      "purpose_delegated",
+      "external_approved"
+    ],
+    "required_steward_modes": [
+      "automatic",
+      "propose",
+      "confirm",
+      "negotiate",
+      "escalate"
+    ],
+    "required_dynamics": [
+      "routine_cooperation",
+      "competing_interests",
+      "dependency",
+      "unexpected_change"
+    ]
+  }
+}

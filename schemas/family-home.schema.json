@@ -1,0 +1,673 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://homie.local/schemas/family-home.schema.json",
+  "title": "Homie family-home experiment",
+  "description": "A concrete household state and a sequence of episodes used to test the family-home model.",
+  "type": "object",
+  "required": [
+    "model_version",
+    "title",
+    "mandate",
+    "rights_floor",
+    "components",
+    "functions",
+    "household",
+    "episodes",
+    "coverage"
+  ],
+  "properties": {
+    "model_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mandate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rights_floor": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "$ref": "#/$defs/namedDefinition"
+      }
+    },
+    "components": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/component"
+      }
+    },
+    "functions": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "$ref": "#/$defs/namedDefinition"
+      }
+    },
+    "household": {
+      "$ref": "#/$defs/household"
+    },
+    "episodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/episode"
+      }
+    },
+    "coverage": {
+      "$ref": "#/$defs/coverage"
+    }
+  },
+  "$defs": {
+    "component": {
+      "type": "string",
+      "enum": [
+        "participants",
+        "relationships",
+        "habitat_commons",
+        "coordination",
+        "continuity",
+        "boundary_interfaces"
+      ]
+    },
+    "informationClass": {
+      "type": "string",
+      "enum": [
+        "private",
+        "shared",
+        "purpose_delegated",
+        "external_approved"
+      ]
+    },
+    "stewardMode": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "propose",
+        "confirm",
+        "negotiate",
+        "escalate",
+        "prohibited"
+      ]
+    },
+    "dynamic": {
+      "type": "string",
+      "enum": [
+        "routine_cooperation",
+        "competing_interests",
+        "dependency",
+        "unexpected_change"
+      ]
+    },
+    "memberLayer": {
+      "type": "string",
+      "enum": [
+        "core_household",
+        "dependent",
+        "extended_family",
+        "authorized_participant"
+      ]
+    },
+    "participantKind": {
+      "type": "string",
+      "enum": [
+        "human",
+        "nonhuman_dependent",
+        "delegated_agent"
+      ]
+    },
+    "resourceKind": {
+      "type": "string",
+      "enum": [
+        "space",
+        "physical",
+        "financial",
+        "utility",
+        "information",
+        "time",
+        "attention",
+        "external_access"
+      ]
+    },
+    "relationshipKind": {
+      "type": "string",
+      "enum": [
+        "partner",
+        "caregiver_dependent",
+        "extended_family",
+        "companion_care",
+        "delegation"
+      ]
+    },
+    "namedDefinition": {
+      "type": "object",
+      "required": [
+        "id",
+        "definition"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "participant": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "member_layers",
+        "roles",
+        "needs",
+        "rights"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "$ref": "#/$defs/participantKind"
+        },
+        "member_layers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/memberLayer"
+          }
+        },
+        "roles": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "needs": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "rights": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        }
+      },
+      "additionalProperties": false
+    },
+    "relationship": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "from",
+        "to",
+        "features"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "kind": {
+          "$ref": "#/$defs/relationshipKind"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "features": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        }
+      },
+      "additionalProperties": false
+    },
+    "resource": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "shared_by",
+        "governance_rule"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "$ref": "#/$defs/resourceKind"
+        },
+        "shared_by": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "governance_rule": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "delegation": {
+      "type": "object",
+      "required": [
+        "id",
+        "delegate",
+        "purpose",
+        "scope",
+        "limits",
+        "revocable_by"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "delegate": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "limits": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "revocable_by": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "household": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "description",
+        "participants",
+        "relationships",
+        "resources",
+        "governance"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "participants": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/participant"
+          }
+        },
+        "relationships": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/relationship"
+          }
+        },
+        "resources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/resource"
+          }
+        },
+        "governance": {
+          "type": "object",
+          "required": [
+            "decision_principles",
+            "delegations"
+          ],
+          "properties": {
+            "decision_principles": {
+              "$ref": "#/$defs/nonEmptyStringArray"
+            },
+            "delegations": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/delegation"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "affectedParticipant": {
+      "type": "object",
+      "required": [
+        "participant",
+        "needs",
+        "rights"
+      ],
+      "properties": {
+        "participant": {
+          "type": "string"
+        },
+        "needs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rights": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "informationItem": {
+      "type": "object",
+      "required": [
+        "class",
+        "subject",
+        "purpose",
+        "recipients"
+      ],
+      "properties": {
+        "class": {
+          "$ref": "#/$defs/informationClass"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "recipients": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "holders",
+        "basis",
+        "rights_floor_check"
+      ],
+      "properties": {
+        "holders": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rights_floor_check": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "stewardAction": {
+      "type": "object",
+      "required": [
+        "mode",
+        "may_do",
+        "must_not_do",
+        "human_input",
+        "escalation"
+      ],
+      "properties": {
+        "mode": {
+          "$ref": "#/$defs/stewardMode"
+        },
+        "may_do": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "must_not_do": {
+          "$ref": "#/$defs/nonEmptyStringArray"
+        },
+        "human_input": {
+          "type": "string",
+          "minLength": 1
+        },
+        "escalation": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "action": {
+      "type": "object",
+      "required": [
+        "actor",
+        "action",
+        "authorization"
+      ],
+      "properties": {
+        "actor": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "authorization": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "outcome": {
+      "type": "object",
+      "required": [
+        "relationship_changes",
+        "resource_changes",
+        "shared_memory_updates",
+        "unresolved"
+      ],
+      "properties": {
+        "relationship_changes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "resource_changes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "shared_memory_updates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unresolved": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "episode": {
+      "type": "object",
+      "required": [
+        "id",
+        "time",
+        "title",
+        "trigger",
+        "components",
+        "dynamics",
+        "affected",
+        "information",
+        "authority",
+        "steward",
+        "actions",
+        "outcome"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "time": {
+          "type": "string",
+          "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trigger": {
+          "type": "string",
+          "minLength": 1
+        },
+        "components": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/component"
+          }
+        },
+        "dynamics": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/dynamic"
+          }
+        },
+        "affected": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/affectedParticipant"
+          }
+        },
+        "information": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/informationItem"
+          }
+        },
+        "authority": {
+          "$ref": "#/$defs/authority"
+        },
+        "steward": {
+          "$ref": "#/$defs/stewardAction"
+        },
+        "actions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        },
+        "outcome": {
+          "$ref": "#/$defs/outcome"
+        }
+      },
+      "additionalProperties": false
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "required_components",
+        "required_information_classes",
+        "required_steward_modes",
+        "required_dynamics"
+      ],
+      "properties": {
+        "required_components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/component"
+          }
+        },
+        "required_information_classes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/informationClass"
+          }
+        },
+        "required_steward_modes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/stewardMode"
+          }
+        },
+        "required_dynamics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/dynamic"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "nonEmptyStringArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}
