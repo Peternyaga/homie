@@ -15,9 +15,10 @@ This repository currently contains:
 - [The foundational model](docs/foundational-model.md): components, functions, boundaries, governance, and agent topology.
 - [The first experiment](experiments/ordinary-weekday.md): a traced ordinary weekday in a fictional mixed household.
 - [The companion interface concept](docs/interface-concept.md): Homie's proposed Hearth, Whisper, Home, Signal, and Door interaction forms.
+- [Existing agent infrastructure assessment](docs/existing-agent-infrastructure.md): what Homie can reuse from OpenClaw and Hermes, and which household-governance capabilities remain unique.
 - [Machine-readable experiment data](experiments/ordinary-weekday.json) and its [JSON Schema](schemas/family-home.schema.json).
 - [A dependency-free validator](scripts/validate_model.py) and regression tests.
-- [The current handoff](HANDOFF.md) and [foundation-session transcript](docs/sessions/2026-07-16-foundation.md) for continuing the exploration on another device.
+- [The current handoff](HANDOFF.md), [foundation-session transcript](docs/sessions/2026-07-16-foundation.md), and [agent-infrastructure session](docs/sessions/2026-07-18-agent-infrastructure.md) for continuing the exploration on another device.
 
 ```mermaid
 flowchart LR
